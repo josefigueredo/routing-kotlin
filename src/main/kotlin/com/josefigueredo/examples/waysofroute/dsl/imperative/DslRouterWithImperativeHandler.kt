@@ -2,7 +2,6 @@ package com.josefigueredo.examples.waysofroute.dsl.imperative
 
 import com.josefigueredo.examples.waysofroute.handler.ImperativeHandler
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean
 import org.springframework.http.MediaType.TEXT_HTML
 import org.springframework.stereotype.Component

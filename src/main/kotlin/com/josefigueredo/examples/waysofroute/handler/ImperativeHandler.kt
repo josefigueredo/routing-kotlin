@@ -3,7 +3,6 @@ package com.josefigueredo.examples.waysofroute.handler
 import com.josefigueredo.examples.waysofroute.service.ReactiveNumberService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.reactive.awaitFirst
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Component

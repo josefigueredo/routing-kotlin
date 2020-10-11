@@ -6,9 +6,6 @@ import kotlinx.coroutines.flow.first
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.reactive.function.server.ServerRequest
-import reactor.core.publisher.Mono
-import reactor.kotlin.core.publisher.toMono
 
 @RestController
 @RequestMapping("/annotated/functional")
