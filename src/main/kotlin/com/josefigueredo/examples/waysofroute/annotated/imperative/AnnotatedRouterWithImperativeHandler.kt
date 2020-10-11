@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*
 class AnnotatedRouterWithImperativeHandler(@Autowired val handler: ImperativeHandler) {
 
     @GetMapping("/echo/{number}")
+    @ResponseBody
     suspend fun echoNumber(@PathVariable number: Int): Int = handler.echoNumber(number)
 
     @GetMapping(path = ["/range/{count}"],
