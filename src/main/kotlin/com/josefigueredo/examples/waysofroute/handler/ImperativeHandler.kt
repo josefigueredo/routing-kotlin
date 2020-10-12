@@ -27,10 +27,7 @@ class ImperativeHandler(@Autowired val service: ReactiveNumberService) {
                             service.generateRangeOfInts(request.pathVariable("count").toInt())
                     )
 
-    suspend fun echoNumber(number: Int): Int =
-            service.echoNumber(number)
-                    .first()
+    suspend fun echoNumber(number: Int): Flow<Int> = service.echoNumber(number)
 
-    suspend fun generateRangeOfInts(count: Int): Flow<Int> =
-            service.generateRangeOfInts(count)
+    suspend fun generateRangeOfInts(count: Int): Flow<Int> = service.generateRangeOfInts(count)
 }
