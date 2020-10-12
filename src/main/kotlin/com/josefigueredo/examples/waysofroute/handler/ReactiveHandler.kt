@@ -17,7 +17,8 @@ class ReactiveHandler(@Autowired val service: ReactiveNumberService) {
                     .contentType(MediaType.APPLICATION_STREAM_JSON)
                     .body(
                             echoNumber(
-                                    request.pathVariable("number").toInt()
+                                    request.pathVariable("number")
+                                            .toInt()
                             ), Flow::class.java
                     )
 
@@ -26,11 +27,13 @@ class ReactiveHandler(@Autowired val service: ReactiveNumberService) {
                     .contentType(MediaType.APPLICATION_STREAM_JSON)
                     .body(
                             generateRangeOfInts(
-                                    request.pathVariable("count").toInt()
+                                    request.pathVariable("count")
+                                            .toInt()
                             ), Flow::class.java
                     )
 
     fun echoNumber(number: Int): Flow<Int> = service.echoNumber(number)
 
-    fun generateRangeOfInts(count: Int): Flow<Int> = service.generateRangeOfInts(count)
+    fun generateRangeOfInts(count: Int): Flow<Int> =
+            service.generateRangeOfInts(count)
 }
