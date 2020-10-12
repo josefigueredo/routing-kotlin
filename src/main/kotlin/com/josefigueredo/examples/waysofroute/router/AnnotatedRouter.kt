@@ -1,6 +1,6 @@
-package com.josefigueredo.examples.waysofroute.annotated.functional
+package com.josefigueredo.examples.waysofroute.router
 
-import com.josefigueredo.examples.waysofroute.handler.FunctionalHandler
+import com.josefigueredo.examples.waysofroute.handler.CorutineHandler
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import org.springframework.beans.factory.annotation.Autowired
@@ -8,8 +8,8 @@ import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/annotated/functional")
-class AnnotatedRouterWithFunctionalHandler(@Autowired val handler: FunctionalHandler) {
+@RequestMapping("/annotated")
+class AnnotatedRouter(@Autowired val handler: CorutineHandler) {
 
     @GetMapping("/echo/{number}")
     @ResponseBody

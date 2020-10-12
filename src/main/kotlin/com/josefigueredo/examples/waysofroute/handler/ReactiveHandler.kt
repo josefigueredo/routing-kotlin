@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import reactor.core.publisher.Mono
 
 @Component
-class FunctionalHandler(@Autowired val service: ReactiveNumberService) {
+class ReactiveHandler(@Autowired val service: ReactiveNumberService) {
 
     fun echoNumber(request: ServerRequest): Mono<ServerResponse> =
             ServerResponse.ok()
@@ -30,9 +30,7 @@ class FunctionalHandler(@Autowired val service: ReactiveNumberService) {
                             ), Flow::class.java
                     )
 
-    fun echoNumber(number: Int): Flow<Int> =
-            service.echoNumber(number)
+    fun echoNumber(number: Int): Flow<Int> = service.echoNumber(number)
 
-    fun generateRangeOfInts(count: Int): Flow<Int> =
-            service.generateRangeOfInts(count)
+    fun generateRangeOfInts(count: Int): Flow<Int> = service.generateRangeOfInts(count)
 }

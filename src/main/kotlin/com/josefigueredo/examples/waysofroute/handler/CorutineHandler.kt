@@ -2,7 +2,6 @@ package com.josefigueredo.examples.waysofroute.handler
 
 import com.josefigueredo.examples.waysofroute.service.ReactiveNumberService
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
@@ -11,7 +10,7 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.bodyAndAwait
 
 @Component
-class ImperativeHandler(@Autowired val service: ReactiveNumberService) {
+class CorutineHandler(@Autowired val service: ReactiveNumberService) {
 
     suspend fun echoNumber(request: ServerRequest): ServerResponse =
             ServerResponse.ok()
@@ -30,4 +29,5 @@ class ImperativeHandler(@Autowired val service: ReactiveNumberService) {
     suspend fun echoNumber(number: Int): Flow<Int> = service.echoNumber(number)
 
     suspend fun generateRangeOfInts(count: Int): Flow<Int> = service.generateRangeOfInts(count)
+
 }
